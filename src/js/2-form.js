@@ -43,4 +43,15 @@ form.addEventListener('submit', e => {
   localStorage.removeItem(STORAGE_KEY);
   form.reset();
   formData = { email: '', message: '' };
+
+  // ✅ Показати повідомлення "Дякуємо"
+  const thankYouMsg = document.getElementById('thank-you-message');
+  thankYouMsg.classList.remove('visually-hidden');
+  thankYouMsg.classList.add('show');
+
+  // Автоматично приховати через 3 секунди
+  setTimeout(() => {
+    thankYouMsg.classList.add('visually-hidden');
+    thankYouMsg.classList.remove('show');
+  }, 3000);
 });
